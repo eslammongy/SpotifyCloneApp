@@ -1,4 +1,4 @@
-package com.eslammongy.spotifycloneapp.data.constants
+package com.eslammongy.spotifycloneapp.constants
 
 object Constants{
 

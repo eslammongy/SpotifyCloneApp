@@ -1,6 +1,6 @@
 package com.eslammongy.spotifycloneapp.data.remote
 
-import com.eslammongy.spotifycloneapp.data.constants.Constants
+import com.eslammongy.spotifycloneapp.constants.Constants
 import com.eslammongy.spotifycloneapp.data.entities.SongModel
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await

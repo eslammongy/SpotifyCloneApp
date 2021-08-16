@@ -2,6 +2,6 @@
     <string name="app_name">SpotifyCloneApp</string>
     <string name="todo">TODO</string>
     <string name="spotify_clone">Spotify Clone</string>
-    <string name="authername">autherName</string>
-    <string name="songname">SongName</string>
+    <string name="songname">songName</string>
+    <string name="_00_00">00:00</string>
 </resources>
