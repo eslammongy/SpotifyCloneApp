@@ -1,6 +1,7 @@
-package com.eslammongy.spotifyclone.di
+package com.eslammongy.spotifycloneapp.di
 
 import android.content.Context
+import com.eslammongy.spotifycloneapp.data.remote.MusicDataBase
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.audio.AudioAttributes
@@ -19,6 +20,10 @@ object ServiceModule {
 
     @ServiceScoped
     @Provides
+    fun provideMusicDatabase() = MusicDataBase()
+
+    @ServiceScoped
+    @Provides
     fun provideAudioAttributes() = AudioAttributes.Builder()
         .setContentType(C.CONTENT_TYPE_MUSIC)
         .setUsage(C.USAGE_MEDIA)
@@ -26,29 +31,16 @@ object ServiceModule {
 
     @ServiceScoped
     @Provides
-    fun provideExoPlayer(
-        @ApplicationContext context: Context,
-        audioAttributes: AudioAttributes
-    ) = SimpleExoPlayer.Builder(context).build().apply {
-        setAudioAttributes(audioAttributes, true)
+    fun provideExoPlayer(@ApplicationContext context: Context , audioAttributes:AudioAttributes)
+    =SimpleExoPlayer.Builder(context).build().apply {
+        setAudioAttributes(audioAttributes , true)
         setHandleAudioBecomingNoisy(true)
     }
 
     @ServiceScoped
     @Provides
-    fun provideDataSourceFactory(
-        @ApplicationContext context: Context
-    ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "Spotify App"))
+    fun provideDataSourceFactory(@ApplicationContext context: Context)
+    = DefaultDataSourceFactory(context , Util.getUserAgent(context , "Spotify App"))
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-

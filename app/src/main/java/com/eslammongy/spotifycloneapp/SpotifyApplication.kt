@@ -1,4 +1,4 @@
-package com.eslammongy.spotifyclone
+package com.eslammongy.spotifycloneapp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

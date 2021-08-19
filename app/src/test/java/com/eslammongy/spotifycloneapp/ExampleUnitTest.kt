@@ -1,4 +1,4 @@
-package com.eslammongy.spotifyclone
+package com.eslammongy.spotifycloneapp
 
 import org.junit.Test
 

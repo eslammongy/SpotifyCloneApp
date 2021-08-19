@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    android:background="@color/Dark"
+    tools:context=".MainActivity">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSongName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SONG NAME"
+        android:text="@string/songname"
         android:gravity="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/ivSongImage"
@@ -19,22 +20,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivSongImage"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@color/darkBackground"
+        android:background="@color/lightDark"
+        android:src="@drawable/ic_undraw_compose_music"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCurTime"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="00:00"
+        android:text="@string/_00_00"
         android:layout_marginStart="16dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
@@ -54,7 +58,7 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="00:00"
+        android:text="@string/_00_00"
         android:layout_marginEnd="16dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
@@ -67,31 +71,39 @@
         android:layout_height="75dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/circle_drawable"
-        android:src="@drawable/ic_play"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:tint ="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/ivSkipPrevious"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_skip_previous"
+        android:src="@drawable/ic_baseline_skip_previous_24"
+        app:tint ="@color/White"
+        android:background="@drawable/custom_radius_shape"
         app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
         app:layout_constraintEnd_toStartOf="@+id/ivPlayPauseDetail"
-        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/ivSkip"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
-        android:src="@drawable/ic_skip"
+        android:src="@drawable/ic_baseline_skip_next_24"
+        app:tint ="@color/White"
+        android:background="@drawable/custom_radius_shape"
         app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
         app:layout_constraintStart_toEndOf="@+id/ivPlayPauseDetail"
-        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail"
+        android:contentDescription="@string/todo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

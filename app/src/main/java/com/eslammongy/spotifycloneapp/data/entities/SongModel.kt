@@ -1,6 +1,6 @@
-package com.eslammongy.spotifyclone.data.entities
+package com.eslammongy.spotifycloneapp.data.entities
 
-data class Song(
+data class SongModel(
     val mediaId: String = "",
     val title: String = "",
     val subtitle: String = "",

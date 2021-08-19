@@ -1,4 +1,4 @@
-package com.eslammongy.spotifyclone
+package com.eslammongy.spotifycloneapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
