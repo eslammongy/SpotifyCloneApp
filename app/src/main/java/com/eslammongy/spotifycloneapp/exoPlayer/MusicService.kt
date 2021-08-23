@@ -8,7 +8,7 @@ import android.support.v4.media.MediaDescriptionCompat
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import androidx.media.MediaBrowserServiceCompat
-import com.eslammongy.spotifycloneapp.constants.Constants.MEDIA_ROOR_ID
+import com.eslammongy.spotifycloneapp.constants.Constants.MEDIA_ROOT_ID
 import com.eslammongy.spotifycloneapp.constants.Constants.NETWORK_ERROR
 import com.eslammongy.spotifycloneapp.exoPlayer.callbacks.MusicPlaybackPrepare
 import com.eslammongy.spotifycloneapp.exoPlayer.callbacks.MusicPlayerEventListener
@@ -123,7 +123,7 @@ class MusicService : MediaBrowserServiceCompat() {
         clientUid: Int,
         rootHints: Bundle?
     ): BrowserRoot? {
-        return BrowserRoot(MEDIA_ROOR_ID, null)
+        return BrowserRoot(MEDIA_ROOT_ID, null)
     }
 
     override fun onLoadChildren(
@@ -131,7 +131,7 @@ class MusicService : MediaBrowserServiceCompat() {
         result: Result<MutableList<MediaBrowserCompat.MediaItem>>
     ) {
         when (parentId) {
-            MEDIA_ROOR_ID -> {
+            MEDIA_ROOT_ID -> {
                 val resultSent = firebaseMusicSource.whenReady {
                     if (it) {
                         result.sendResult(firebaseMusicSource.asMediaItems())

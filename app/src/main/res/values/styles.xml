@@ -19,6 +19,10 @@
     <style name="RoundedSquare">
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="RoundedShape">
+        <item name="cornerSize">50%</item>
+    </style>
     <style name="PlayButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">100dp</item>
     </style>

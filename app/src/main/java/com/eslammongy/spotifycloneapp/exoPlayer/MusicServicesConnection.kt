@@ -17,7 +17,7 @@ import com.eslammongy.spotifycloneapp.constants.Resource
 class MusicServicesConnection(context: Context) {
 
     private val _isConnected = MutableLiveData<Event<Resource<Boolean>>>()
-    val isConnnected: LiveData<Event<Resource<Boolean>>> = _isConnected
+    val isConnected: LiveData<Event<Resource<Boolean>>> = _isConnected
 
     private val _netWorkError = MutableLiveData<Event<Resource<Boolean>>>()
     val netWorkError: LiveData<Event<Resource<Boolean>>> = _netWorkError
@@ -42,11 +42,11 @@ class MusicServicesConnection(context: Context) {
     val transportController:MediaControllerCompat.TransportControls
     get() = mediaController.transportControls
 
-    fun subscribtion(parentID:String , callback:MediaBrowserCompat.SubscriptionCallback){
+    fun subscription(parentID:String, callback:MediaBrowserCompat.SubscriptionCallback){
         mediaBrowser.subscribe(parentID , callback)
     }
 
-    fun unSubscribtion(parentID:String , callback:MediaBrowserCompat.SubscriptionCallback){
+    fun unSubscription(parentID:String, callback:MediaBrowserCompat.SubscriptionCallback){
         mediaBrowser.unsubscribe(parentID , callback)
     }
 

@@ -52,4 +52,5 @@
         app:layout_constraintStart_toEndOf="@+id/ivSongImage"
         app:layout_constraintTop_toBottomOf="@+id/tvSongName" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>

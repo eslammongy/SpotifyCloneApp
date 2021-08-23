@@ -36,7 +36,7 @@ class HomeFragment:Fragment() {
         displayRecyclerView()
         subscribeToObservers()
 
-        songAdapter.setOnItemClickListener {
+        songAdapter.setItemClickListener {
             mainViewModel.playingOrToggelSong(it)
         }
     }

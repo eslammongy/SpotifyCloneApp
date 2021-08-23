@@ -6,7 +6,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.eslammongy.spotifycloneapp.constants.Constants.MEDIA_ROOR_ID
+import com.eslammongy.spotifycloneapp.constants.Constants.MEDIA_ROOT_ID
 import com.eslammongy.spotifycloneapp.constants.Resource
 import com.eslammongy.spotifycloneapp.data.entities.SongModel
 import com.eslammongy.spotifycloneapp.exoPlayer.MusicServicesConnection
@@ -21,14 +21,14 @@ class MainViewModel
     private val _mediaItems = MutableLiveData<Resource<List<SongModel>>>()
     val mediaItems:LiveData<Resource<List<SongModel>>> = _mediaItems
 
-    val isConnected = musicServicesConnection.isConnnected
+    val isConnected = musicServicesConnection.isConnected
     val networkError = musicServicesConnection.netWorkError
     val currentPlayingSong = musicServicesConnection.currentPlayingSong
     val playbackState = musicServicesConnection.playbackState
 
     init {
         _mediaItems.postValue(Resource.loading(null))
-        musicServicesConnection.subscribtion(MEDIA_ROOR_ID ,
+        musicServicesConnection.subscription(MEDIA_ROOT_ID ,
             object :MediaBrowserCompat.SubscriptionCallback(){
 
                 override fun onChildrenLoaded(
@@ -82,7 +82,7 @@ class MainViewModel
 
     override fun onCleared() {
         super.onCleared()
-        musicServicesConnection.unSubscribtion(MEDIA_ROOR_ID , object :MediaBrowserCompat.SubscriptionCallback(){})
+        musicServicesConnection.unSubscription(MEDIA_ROOT_ID , object :MediaBrowserCompat.SubscriptionCallback(){})
     }
 
 
