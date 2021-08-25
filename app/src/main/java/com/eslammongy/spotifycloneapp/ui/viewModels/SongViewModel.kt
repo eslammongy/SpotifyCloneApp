@@ -20,7 +20,7 @@ constructor(musicServicesConnection: MusicServicesConnection):ViewModel(){
     val currentSongDuration:LiveData<Long> = _currentSongDuration
 
     private val _currentPlayerPosition = MutableLiveData<Long>()
-    private val currentPlayerPosition:LiveData<Long> = _currentPlayerPosition
+     val currentPlayerPosition:LiveData<Long> = _currentPlayerPosition
 
     init {
         updateCurrentPlayerPosition()
